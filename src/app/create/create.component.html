@@ -1,0 +1,6 @@
+<form *ngIf="createForm" [formGroup]="createForm">
+    <input formControlName="userId" placeholder="User ID" />
+    <input formControlName="title" placeholder="Title" />
+    <textarea formControlName="body" placeholder="Body"></textarea>
+    <button (click)="onSave()">Save</button>
+  </form>

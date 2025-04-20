@@ -1,0 +1,15 @@
+<h2 mat-dialog-title class="dialog-title">
+    <mat-icon color="warn">info</mat-icon>
+    <span>Are you sure you want to delete this item?</span>
+  </h2>
+  
+  <div mat-dialog-content class="dialog-content">
+    Are you sure you want to delete item number {{data.id}}?
+  </div>
+  
+  <mat-dialog-actions align="end" class="dialog-actions">
+    <button mat-stroked-button color="primary" (click)="onCancel()">Cancel</button>
+    <button mat-flat-button color="warn" (click)="onConfirm()">Delete</button>
+  </mat-dialog-actions>
+  
+  

@@ -1,0 +1,9 @@
+<form [formGroup]="loginForm">
+    <span *ngIf="errorMessage" style="color: red;">
+        {{errorMessage}}
+    </span>
+    <input formControlName="email" placeholder="email" type="email" />
+    <input formControlName="password" placeholder="password" type="password" />
+
+    <button (click)="login()">login</button>
+</form>
