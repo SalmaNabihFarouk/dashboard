@@ -1,9 +1,43 @@
-<form [formGroup]="loginForm">
-    <span *ngIf="errorMessage" style="color: red;">
-        {{errorMessage}}
-    </span>
-    <input formControlName="email" placeholder="email" type="email" />
-    <input formControlName="password" placeholder="password" type="password" />
 
-    <button (click)="login()">login</button>
-</form>
+<!-- 
+
+<div class="login">
+    <form [formGroup]="loginForm">
+        <span *ngIf="errorMessage" style="color: red;">
+            {{errorMessage}}
+        </span>
+        <input formControlName="email" placeholder="email" type="email" />
+        <input formControlName="password" placeholder="password" type="password" />
+    
+        <button (click)="login()">login</button>
+    </form>
+</div> -->
+<div class="login-container">
+    <form [formGroup]="loginForm" class="login-form">
+      <h2>Login to Account</h2>
+      <p>Please enter your email and password to continue</p>
+  
+      <span *ngIf="errorMessage" class="error-message">{{ errorMessage }}</span>
+  
+      <label>Email address:</label>
+      <input formControlName="email" type="email" placeholder="esteban_schiller@gmail.com" />
+  
+      <div class="password-label">
+        <label>Password</label>
+        <a href="#">Forget Password?</a>
+      </div>
+      <input formControlName="password" type="password" placeholder="●●●●●●●" />
+  
+      <div class="remember-row">
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remember Password</label>
+      </div>
+  
+      <button type="button" (click)="login()">Sign In</button>
+  
+      <p class="create-account">
+        Don’t have an account? <a href="#">Create Account</a>
+      </p>
+    </form>
+  </div>
+  

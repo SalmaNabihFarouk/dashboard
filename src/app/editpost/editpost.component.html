@@ -1,7 +1,93 @@
-<form *ngIf="editForm" [formGroup]="editForm">
+<!-- <form *ngIf="editForm" [formGroup]="editForm">
     <input formControlName="userId" placeholder="User ID" />
     <input formControlName="title" placeholder="Title" />
     <textarea formControlName="body" placeholder="Body"></textarea>
     <button (click)="onSave()">Save</button>
-  </form>
+  </form> -->
+<!-- <div class="bg-danger">
+    <div class="">
+      <div class="edit-post-container bg-danger">
+        <h2><strong>Posts Lists</strong> › Edit Post</h2>
+      
+        <form *ngIf="editForm" [formGroup]="editForm" class="edit-form">
+      
+      <div class="row bg-danger">
+          
+        <div class="col-md-6 bg-danger">
+          <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" />
+          </mat-form-field>
+        </div>
+    
+    <div class="col-md-6">
+      <mat-form-field appearance="outline" >
+        <mat-label>Body</mat-label>
+        <textarea matInput formControlName="body" rows="5"></textarea>
+      </mat-form-field>
+    </div>
+    
+    <div class="col-md-6">
+      <mat-form-field appearance="outline" >
+        <mat-label>User ID</mat-label>
+        <mat-select formControlName="userId">
+           <mat-option *ngFor="let id of userIds" [value]="id">
+            {{ id }}
+          </mat-option>
+ 
+        </mat-select>
+      </mat-form-field>
+    </div>
+      </div>
+    
+     
+      
+          <button mat-flat-button color="primary" (click)="onSave()">Save</button>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+<div class="mt-5">
+  <div class="row px-4">
+    <div class="col-md-8 ">
+      <p class="fs-3"><strong>Posts Lists</strong> › Edit Post</p> 
+
+      <form *ngIf="editForm" [formGroup]="editForm">
+   
+        <mat-form-field appearance="outline" class="w-75">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" />
+        </mat-form-field>
+
+
   
+        <mat-form-field appearance="outline" class="w-75">
+          <mat-label>Body</mat-label>
+          <textarea matInput formControlName="body" rows="5"></textarea>
+        </mat-form-field>
+
+  
+
+        <mat-form-field appearance="outline" class="w-75">
+          <mat-label>User ID</mat-label>
+          <mat-select formControlName="userId">
+            <mat-option *ngFor="let id of userIds" [value]="id">
+              {{ id }}
+            </mat-option>
+
+          </mat-select>
+        </mat-form-field>
+    
+
+      </form>
+      <div class="mt-5">
+        <button type="button" class="btn btn-primary btn-lg w-25" (click)="onSave()">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+</div>

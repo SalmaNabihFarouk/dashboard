@@ -26,6 +26,8 @@ import { EditpostComponent } from './editpost/editpost.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateComponent } from './create/create.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ErrorpageComponent } from './errorpage/errorpage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,9 @@ import { LoginComponent } from './login/login.component';
     DeleteConfirmationDialogComponent,
     EditpostComponent,
     CreateComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    ErrorpageComponent
   ],
   imports: [
     BrowserModule,

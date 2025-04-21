@@ -17,7 +17,7 @@ export class EditpostComponent {
   editForm!: FormGroup;
   post!: PostDto | undefined;
   localPosts: PostDto[] = [];
-
+  userIds: Set<number> = new Set();
   constructor(
     private route: ActivatedRoute,
     private _PostService: PostService,
@@ -36,7 +36,11 @@ export class EditpostComponent {
       title: [this.post?.title],
       body: [this.post?.body]
     });
+  
 
+    for (const post of this.localPosts) {   
+    this.userIds.add(post.userId);  
+    }
   }
 
 
@@ -54,6 +58,7 @@ export class EditpostComponent {
 
 
     this._PostService.localPosts = this.localPosts;
+   
     this._PostService.isPostsChanged = true;
 
     console.log('Post Updated:', updatedPost);

@@ -6,11 +6,12 @@ import { CreateComponent } from './create/create.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-
+  { path: "login", component: LoginComponent },
+  { path: "", component: LoginComponent },
   { path: "posts", component: PostslistsComponent },
   { path: 'posts/:id', component: EditpostComponent },
   { path: "create", component: CreateComponent },
-  { path: "login", component: LoginComponent }
+
 ];
 
 @NgModule({

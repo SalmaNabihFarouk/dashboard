@@ -10,11 +10,11 @@ import { PostService } from '../features/posts/services/post.service';
 })
 export class CreateComponent {
 
-
+  userIds: Set<number> = new Set();
   id: number = 0;
   createForm!: FormGroup;
 
-
+  localPosts: PostDto[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +29,10 @@ export class CreateComponent {
       title: [],
       body: []
     });
+    this.localPosts = this._PostService.localPosts;
+    for (const post of this.localPosts) {   
+      this.userIds.add(post.userId);  
+      }
   }
 
   onSave() {

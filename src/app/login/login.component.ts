@@ -28,10 +28,10 @@ export class LoginComponent implements OnInit {
 
     if (token) {
 
-      this.router.navigate(['/posts']);
+      this.router.navigate(['posts']);
     } else {
     
-      this.router.navigate(['/login']);
+      this.router.navigate(['login']);
     }
     this.loginForm = new FormGroup({
       email: new FormControl(),

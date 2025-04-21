@@ -4,44 +4,6 @@
   
   .sidenav {
     width: 220px;
-    padding: 20px;
-    background-color: #fff;
-    border-right: 1px solid #eee;
-  }
-  
-  .logo {
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 18px;
-  
-    .highlight {
-      color: #3f51b5; 
-    }
-  }
-  
-  .nav-button {
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 10px;
-  }
-  
-  .active {
-    background-color: #3f51b5;
-    color: #fff;
-  }
-  
-  .logout-section {
-    margin-top: 40px;
-  }
-  /*  */
-
-  .sidenav-container {
-    height: 100vh;
-  }
-  
-  .sidenav {
-    width: 220px;
     background: white;
     padding: 20px;
     border-right: 1px solid #eee;
