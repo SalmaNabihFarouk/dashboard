@@ -35,27 +35,13 @@ export class LoginComponent implements OnInit {
 
   login() {
 
-    this._UserService.getUsers().subscribe({
-      next: (response) => {
+    let isAuthenticated = this._LoginService.authenticate(this.loginForm.value.email, this.loginForm.value.password)
 
-        console.log(response);
-        this.users = response
+    if (!isAuthenticated) {
+      this.errorMessage = "Wrong cedentials please enter valid email and password.";
+    }
 
-        const matchedUser = this.users.find(user =>
-          user.email === this.loginForm.value.email && user.password === this.loginForm.value.password
-        );
-
-        let isAuthenticated = this._LoginService.authenticate(this.loginForm.value.email, this.loginForm.value.password)
-
-        if (!isAuthenticated) {
-          this.errorMessage = "Wrong cedentials please enter valid email and password.";
-        }
-
-        this.errorMessage = undefined;
-        this.router.navigate(['/posts']);
-      }
-
-    });
+    this.errorMessage = undefined;
+    this.router.navigate(['/posts']);
   }
-
 }

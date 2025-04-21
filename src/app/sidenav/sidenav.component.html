@@ -1,5 +1,3 @@
-
-
 <div class="top-navbar">
   <div class="search-container">
     <mat-icon>search</mat-icon>
@@ -21,21 +19,20 @@
 
 
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" [(opened)]="isOpened" class="sidenav">
-      <h2 class="logo"><span class="highlight">XonTel</span> Dash</h2>
-      <a mat-button routerLink="/dashboard" routerLinkActive="active" class="nav-button">Dashboard</a>
-      <a mat-button routerLink="/posts" routerLinkActive="active" class="nav-button">Posts Lists</a>
-      <div class="logout-section">
-        <button mat-button class="nav-button">Logout</button>
-      </div>
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      <button mat-icon-button (click)="toggleNav()">
-        <mat-icon>menu</mat-icon>
-      </button>
-  
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+  <mat-sidenav #sidenav mode="side" [(opened)]="isOpened" class="sidenav">
+    <h2 class="logo"><span class="highlight">XonTel</span> Dash</h2>
+    <a mat-button routerLink="/dashboard" routerLinkActive="active" class="nav-button">Dashboard</a>
+    <a mat-button routerLink="/posts" routerLinkActive="active" class="nav-button">Posts Lists</a>
+    <div class="logout-section">
+      <button (click)="signOut()" mat-button class="nav-button">Logout</button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button mat-icon-button (click)="toggleNav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

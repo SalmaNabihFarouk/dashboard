@@ -23,8 +23,24 @@ export class UserService {
         password: item.password,
         token: item.token,
         profilePicture: item.profilePicture,
-        role: item.role 
+        role: item.role
       })))
     );
+  }
+
+  getUserByEmailAndPassword(email: string, password: string): UserDto | undefined {
+
+    this.getUsers().subscribe({
+      next: (users) => {
+
+        console.log(users);
+
+        return users.find(user =>
+          user.email === email && user.password === password
+        );
+      }
+    });
+
+    return undefined;
   }
 }
