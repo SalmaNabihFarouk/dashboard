@@ -4,7 +4,7 @@ import { PostService } from '../../services/post.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteConfirmationDialogComponent } from 'src/app/delete-confirmation-dialog/delete-confirmation-dialog.component';
+import { DeleteConfirmationDialogComponent } from 'src/app/features/posts/components/delete-confirmation-dialog/delete-confirmation-dialog.component';
 
 @Component({
   selector: 'app-postslists',
@@ -76,6 +76,7 @@ export class PostslistsComponent {
         const updatedPosts = this._PostService.deletPostById(id, this.dataSource.data);
         this.dataSource.data = updatedPosts || [];
         this.refreshLocalPosts(updatedPosts);
+        this._PostService.isPostsChanged =true;
         this.totalLength = this.dataSource.data.length;
       }
     });

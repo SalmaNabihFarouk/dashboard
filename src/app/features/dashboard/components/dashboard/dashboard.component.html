@@ -1,0 +1,91 @@
+<!-- <mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <h2 class="logo"><span class="highlight">XonTel</span> Dash</h2>
+    <a mat-button routerLink="/dashboard" routerLinkActive="active" class="nav-button">Dashboard</a>
+    <a mat-button routerLink="/posts" routerLinkActive="active" class="nav-button">Posts Lists</a>
+    <div class="logout-section">
+      <button mat-button class="nav-button">Logout</button>
+    </div>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+
+    <div class="top-navbar">
+      <div class="search-container">
+        <mat-icon>search</mat-icon>
+        <input type="text" placeholder="Search" />
+      </div>
+      <div class="nav-icons">
+        <button mat-icon-button><mat-icon>notifications</mat-icon></button>
+        <img src="https://flagsapi.com/GB/shiny/32.png" class="flag" />
+        <span class="lang">English</span>
+        <div class="profile">
+          <img src="https://i.pravatar.cc/40?img=3" class="avatar" />
+          <span class="user-info">
+            <div class="name">Moni Roy</div>
+            <div class="role">Admin</div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+<div class="container mt-5">
+    <h2 class="mb-4">Dashboard</h2>
+  
+    <!-- Cards -->
+    <div class="row mb-4">
+      <div class="col-md-3" *ngFor="let item of ['Total User', 'Total Order', 'Total Sales', 'Total Pending']; let i = index">
+        <div class="card p-3 shadow-sm">
+          <h6>{{ item }}</h6>
+          <h4 class="fw-bold">{{ ['40,689', '10,293', '$89,000', '2040'][i] }}</h4>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Charts -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card p-3">
+          <h6>Sales Details</h6>
+          <apx-chart
+            [series]="salesDetails.series"
+            [chart]="salesDetails.chart"
+            [xaxis]="salesDetails.xaxis"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h6>Customers Analytics</h6>
+          <apx-chart
+            [series]="customerAnalytics.series"
+            [chart]="customerAnalytics.chart"
+            [labels]="customerAnalytics.labels"
+          ></apx-chart>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h6>Sales Analytics</h6>
+          <apx-chart
+            [series]="salesAnalytics.series"
+            [chart]="salesAnalytics.chart"
+            [xaxis]="salesAnalytics.xaxis"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  

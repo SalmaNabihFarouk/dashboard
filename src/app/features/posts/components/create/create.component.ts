@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { PostDto } from '../dto/post.dto';
+import { PostDto } from '../../../../dto/post.dto';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PostService } from '../features/posts/services/post.service';
+import { PostService } from '../../services/post.service';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',

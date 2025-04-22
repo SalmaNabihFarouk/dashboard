@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { UserDto } from './dto/user.dto';
 import { map, Observable } from 'rxjs';
-import { ApiService } from 'src/network/core/api.service';
 import { environment } from 'src/environments/env';
+import { ApiService } from 'src/network/core/api.service';
+import { UserDto } from '../../../dto/user.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -28,19 +28,10 @@ export class UserService {
     );
   }
 
-  getUserByEmailAndPassword(email: string, password: string): UserDto | undefined {
+  getUserByEmailAndPassword(email: string, password: string, users: UserDto[]): UserDto | undefined {
+    return users.find(user =>
+      user.email === email && user.password === password
+    );
 
-    this.getUsers().subscribe({
-      next: (users) => {
-
-        console.log(users);
-
-        return users.find(user =>
-          user.email === email && user.password === password
-        );
-      }
-    });
-
-    return undefined;
   }
 }

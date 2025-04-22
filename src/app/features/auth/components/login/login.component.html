@@ -20,14 +20,26 @@
       <span *ngIf="errorMessage" class="error-message">{{ errorMessage }}</span>
   
       <label>Email address:</label>
-      <input formControlName="email" type="email" placeholder="esteban_schiller@gmail.com" />
-  
+      <input formControlName="email" type="email" placeholder="esteban_schiller@gmail.com"  id="email"  />
+ 
+      <div class=" " *ngIf="loginForm.get('email')?.errors&&loginForm.get('email')?.touched ">
+    
+        <p *ngIf="loginForm.get('email')?.getError('required')" class="text-danger ">email is Required</p>
+        <p *ngIf="loginForm.get('email')?.getError('email')" class="text-danger ">InValid Format</p>
+    
+            </div>
       <div class="password-label">
         <label>Password</label>
         <a href="#">Forget Password?</a>
       </div>
-      <input formControlName="password" type="password" placeholder="●●●●●●●" />
-  
+      <input formControlName="password" type="password" placeholder="●●●●●●●"  id="password"/>
+      <div class="" *ngIf="loginForm.get('password')?.errors&&loginForm.get('password')?.touched ">
+    
+        <p *ngIf="loginForm.get('password')?.getError('required')"  class="text-danger ">password is Required</p>
+        <p *ngIf="loginForm.get('password')?.getError('pattern')" class="text-danger ">
+     password Must be at least 6 characters and include at least one letter.</p>
+    
+            </div>
       <div class="remember-row">
         <input type="checkbox" id="remember" />
         <label for="remember">Remember Password</label>

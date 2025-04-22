@@ -17,4 +17,5 @@ export class ApiService {
         return this.http.get<T>(`${baseUrl}/${endpoint}`)
 
     }
+    
 }

@@ -1,4 +1,4 @@
-<div class="top-navbar">
+<div class="top-navbar" *ngIf="showNavBar">
   <div class="search-container">
     <mat-icon>search</mat-icon>
     <input type="text" placeholder="Search" />
@@ -8,31 +8,34 @@
     <img src="https://flagsapi.com/GB/shiny/32.png" class="flag" />
     <span class="lang">English</span>
     <div class="profile">
-      <img src="https://i.pravatar.cc/40?img=3" class="avatar" />
+      <img [src]="profilePicture" class="avatar" />
       <span class="user-info">
-        <div class="name">Moni Roy</div>
-        <div class="role">Admin</div>
+        <div class="name">{{name}}</div>
+        <div class="role">{{role}}</div>
       </span>
     </div>
   </div>
 </div>
 
 
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="side" [(opened)]="isOpened" class="sidenav">
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #sidenav mode="side" [(opened)]="isOpened" class="sidenav" *ngIf="showNavBar" >
     <h2 class="logo"><span class="highlight">XonTel</span> Dash</h2>
-    <a mat-button routerLink="/dashboard" routerLinkActive="active" class="nav-button">Dashboard</a>
+    <a mat-button routerLink="/" routerLinkActive="active" class="nav-button"  [routerLinkActiveOptions]={exact:true}>Dashboard</a>
     <a mat-button routerLink="/posts" routerLinkActive="active" class="nav-button">Posts Lists</a>
+ 
     <div class="logout-section">
       <button (click)="signOut()" mat-button class="nav-button">Logout</button>
     </div>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <button mat-icon-button (click)="toggleNav()">
+    <button mat-icon-button (click)="toggleNav()" *ngIf="showNavBar">
       <mat-icon>menu</mat-icon>
     </button>
-
+    <div *ngIf="loadingService.loading$ | async" class="loading-overlay">
+      <div class="spinner"></div>
+  </div>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
