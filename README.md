@@ -1,5 +1,5 @@
 # Dashboard
-
+![Image](https://github.com/user-attachments/assets/daefdc11-d834-4e00-9d2b-26cf780a00cf)
 
 # Angular Dashboard Project
 
