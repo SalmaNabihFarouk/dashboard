@@ -17,7 +17,7 @@
   </div>
 </div>
 
-
+<!-- 
 <mat-sidenav-container class="sidenav-container" >
   <mat-sidenav #sidenav mode="side" [(opened)]="isOpened" class="sidenav" *ngIf="showNavBar" >
     <h2 class="logo"><span class="highlight">XonTel</span> Dash</h2>
@@ -36,6 +36,33 @@
     <div *ngIf="loadingService.loading$ | async" class="loading-overlay">
       <div class="spinner"></div>
   </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<mat-sidenav-container class="sidenav-container ">
+  <mat-sidenav #sidenav mode="side" [(opened)]="isOpened" class="sidenav" *ngIf="showNavBar">
+    <div class="sidebar-header">
+      <h2><span class="highlight">XonTel</span> <strong>Dash</strong></h2>
+    </div>
+    <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-button">
+      Dashboard
+    </a>
+    <a mat-button routerLink="/posts" routerLinkActive="active" class="nav-button ">
+      Posts Lists
+    </a>
+    <div class="logout-section">
+      <button (click)="signOut()" mat-button class="nav-button logout">Logout</button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button mat-icon-button (click)="toggleNav()" *ngIf="showNavBar">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div *ngIf="loadingService.loading$ | async" class="loading-overlay">
+      <div class="spinner"></div>
+    </div>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
