@@ -9,8 +9,8 @@ This is a full-featured Angular dashboard project designed to simulate a basic c
 
 To test the project, use the following credentials:
 
-- **Email:** `admin@gmail.com`
-- **Password:** `Admin@123`
+- **Email:** `mickey.mouse@dummy.com`
+- **Password:** `password`
 
 The login process is powered by an API that verifies user credentials and returns profile information including username, role (`admin`), and avatar image.
 
