@@ -1,27 +1,48 @@
 # Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
 
-## Development server
+# Angular Dashboard Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This is a full-featured Angular dashboard project designed to simulate a basic content management system using modern UI components with Angular Material.
 
-## Code scaffolding
+## 🔐 Login Credentials
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To test the project, use the following credentials:
 
-## Build
+- **Email:** `admin@gmail.com`
+- **Password:** `Admin@123`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The login process is powered by an API that verifies user credentials and returns profile information including username, role (`admin`), and avatar image.
 
-## Running unit tests
+## ✅ Features Implemented
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- 🔒 **Login Page** – Authenticates user using an external API and displays user info (name, role, avatar) in the navbar upon successful login.
+- 📋 **Posts Table** – Connected to a REST API for `GET` requests. It fetches all posts and displays them in a paginated, filterable table.
+  - Filter functionality based on `User ID`.
+  - Ability to reset filter and re-apply.
+  - Supports pagination using Angular Material.
+- ➕ **Add Post Page** – Allows adding a new post locally (not synced with API due to dummy JSON limitations).
+- 📝 **Edit Post Page** – Allows editing existing post data locally.
+- ❌ **Delete Post** – Deletes post locally in the UI.
+- 📊 **Dashboard** – A simple dashboard landing page after login.
+- 🚪 **Logout** – Clears session and returns to login.
+- 📌 **Navigation** – Includes a responsive sidebar and a top navbar with user data.
+- 🧭 **Routing** – Uses route guards to prevent access to routes without login.
+- ⚙️ **Structure** – Feature-based folder structure using Angular best practices.
+- 🌐 **Responsive Design** – Styled using Bootstrap and Angular Material.
 
-## Running end-to-end tests
+## ℹ️ Notes
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### API Usage
+- **Login** and **Posts table (GET)** use a live API.
+- **Add**, **Edit**, and **Delete** actions are performed **locally in memory**, since the dummy JSON API does not actually persist data changes. This is a known limitation when using public test APIs like JSONPlaceholder.
 
-## Further help
+### Dummy API Limitation
+> JSONPlaceholder is a fake online REST API for testing and prototyping. While it supports `POST`, `PUT`, and `DELETE` requests, it **does not persist** these changes. Therefore, all modifications (edit, delete, add) are **only reflected locally** in the UI for demonstration purposes.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+Built with ❤️ using Angular, Angular Material, Bootstrap, and RxJS.
+
+
+
