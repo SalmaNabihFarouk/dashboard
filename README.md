@@ -42,7 +42,7 @@ The login process is powered by an API that verifies user credentials and return
 
 ---
 
-Built with ❤️ using Angular, Angular Material, Bootstrap, and RxJS.
+Built with  using Angular, Angular Material, Bootstrap, and RxJS.
 
 
 
